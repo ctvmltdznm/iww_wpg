@@ -171,6 +171,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
+            margin-bottom: 40px;          
         }
         
         .card {
@@ -198,6 +199,29 @@
         .card h3 {
             color: var(--primary-color);
             margin-bottom: 10px;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            margin-top: 40px;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .featured-image img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+        }
+        
+        .image-caption {
+            padding: 20px;
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-color);
+            text-align: center;
         }
         
         /* Team Section */
@@ -344,13 +368,15 @@
             <h2>About Our Institute</h2>
             <div class="about-content">
                 <h3>History</h3>
+                <br>
                     <p>The Institute for Materials Science and Engineering at TU Clausthal can look back on a history spanning over 100 years. With the appointment of Woldemar Hommel in 1920 as professor of Metallography and Chemical Technology, the systematic study of the structures and properties of metallic materials began at the then Mining Academy. From 1944, under the leadership of Professor Günter Wassermann, a predecessor of today’s institute developed — the Institute for Metallurgy and Metallophysics. The appointments of Professors Hans-Joachim Bunge and Barry Leslie Mordike in 1976 led to a division into the Institutes for Metallurgy and Metallophysics and Materials Science and Engineering. Since then, these research institutions have developed into a hotspot for texture and materials research. In 1999, both areas merged again into the Institute for Materials Science and Engineering, with chairs in Physical Materials Science (Professor Juri Estrin, 2002–2007) and Applied Materials Science and Engineering (Professor Lothar Wagner, 2002–2019), which laid the foundation for the present-day institute.</p>
                     <br>
                 <h3>Present and Perspectives</h3>
+                <br>
                     <p>The Institute for Materials Science and Engineering sets a new focus on digitalization in materials science and engineering.</p>
                     <br>
-                    <p>Today, the Institute for Materials Science and Engineering is comprehensively dedicated to the behavior of materials and substances. Since the appointment of Prof. Uwe Wolfram in October 2023, a new emphasis has been placed on digitalization in materials science and engineering.</p>
-                    <p>This includes the detailed investigation of material behavior in biological tissues and organs, with particular attention to mineral-reinforced biopolymers, bioceramics, and bioglasses as well as their composites. The material architectures of these systems are central to our interest. We focus on these materials because they are intrinsically circular, produce no non-reusable waste, and exhibit properties that are equivalent or even superior to those of technical materials.</p>
+                    <p>Today, the Institute for Materials Science and Engineering is comprehensively dedicated to the behaviour of materials and substances. Since the appointment of Prof. Uwe Wolfram in October 2023, a new emphasis has been placed on digitalization in materials science and engineering.</p>
+                    <p>This includes the detailed investigation of material behaviour in biological tissues and organs, with particular attention to mineral-reinforced biopolymers, bioceramics, and bioglasses as well as their composites. The material architectures of these systems are central to our interest. We focus on these materials because they are intrinsically circular, produce no non-reusable waste, and exhibit properties that are equivalent or even superior to those of technical materials.</p>
                     <p>To study the material properties, we use a combination of innovative experiments, numerical methods, and mathematical models — ranging from the molecular to the macroscopic length scale.</p>
                     <p>The digital representation of material architectures and the associated algorithms for data processing and interpretation are essential tools to understand the relationship between process, function, and material architecture. By processes, we refer to both technical processes and pathophysiological processes from biomedical contexts.</p>
                     <p>Our experiments include not only established laboratory analytical methods such as XRD, EDX, µCT, SEM, and XRF, but also in-depth investigations at large-scale research facilities such as synchrotrons.</p>
@@ -363,27 +389,39 @@
     <section class="research" id="research">
         <div class="container">
             <h2>Research Areas</h2>
+            <div class="about-content">
+            <p>The reorientation of the institute towards digitalization in materials science and engineering complements and strengthens our traditional research focuses without neglecting them.</p>
+            <p>In appreciation of our scientific legacy, we continue to investigate microstructure–property relationships in metallic materials, particularly in light metals such as aluminum, magnesium, and titanium. Copper and iron-based materials are also subject to intensive research.</p>
+            <br>
+            </div>
             <div class="grid">
                 <div class="card">
-                    <img src="/api/placeholder/400/200" alt="Advanced Materials">
+                    <img src="images/experiment.png" alt="Advanced Materials"> 
                     <div class="card-content">
                         <h3>Advanced Materials</h3>
-                        <p>Development of novel materials with enhanced properties for structural, functional, and multifunctional applications.</p>
+                        <p>Strength characteristics under various load conditions; Damping behaviour of soft magnetic materials; Long-term dimensional stability of materials; Grain refinement of cast materials; Improving fatigue behaviour through mechanical surface hardening processes (e.g., shot peening, roller burnishing); Studying electrochemical corrosion behaviour</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="/api/placeholder/400/200" alt="Nanomaterials">
+                    <img src="images/biofab.png" alt="Biofabrication">
                     <div class="card-content">
-                        <h3>Nanomaterials</h3>
-                        <p>Synthesis, characterization, and application of materials at the nanoscale for electronics, energy, and healthcare.</p>
+                        <h3>Biofabrication</h3>
+                        <p>Design, synthesis, and construction of materials inspired by biological systems</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="/api/placeholder/400/200" alt="Computational Materials Science">
+                    <img src="images/SIm_shear.png" alt="Computational Materials Science">
                     <div class="card-content">
                         <h3>Computational Materials Science</h3>
-                        <p>Using simulation and modeling to predict and design materials with specific properties and behaviors.</p>
+                        <p>Simulation and modeling to understand, predict, and tailor materials properties and behaviour</p>
                     </div>
+                </div>
+            </div>
+            <!-- Featured Research Image with Caption -->
+            <div class="featured-image">
+                <img src="images/PXL_20250327_090046743_blurr.jpg" alt="Research Facility">
+                <div class="image-caption">
+                    The experiments at the institute include both established analytical methods and in-depth investigations at large-scale research facilities.
                 </div>
             </div>
         </div>
@@ -491,7 +529,7 @@
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 90,
-                        behavior: 'smooth'
+                        behaviour: 'smooth'
                     });
                     
                     // Close mobile menu if open
