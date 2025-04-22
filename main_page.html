@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute for Materials Science and Engineering</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #0066cc;
+            --accent-color: #ff9900;
+            --light-gray: #f4f4f4;
+            --dark-gray: #333;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            color: var(--white);
+        }
+        
+        .logo-text h1 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--white);
+            font-size: 24px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/api/placeholder/1200/600") center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 90px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+        
+        .about {
+            background-color: var(--white);
+        }
+        
+        .research {
+            background-color: var(--light-gray);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Team Section */
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .contact-form button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 20px 0;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/60/60" alt="Institute Logo">
+                <div class="logo-text">
+                    <h1>Institute for Materials Science</h1>
+                    <p>Excellence in Research and Education</p>
+                </div>
+            </div>
+            <div class="hamburger">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Advancing Materials Science for a Sustainable Future</h1>
+            <p>Pioneering research, education, and innovation in materials engineering and technology</p>
+            <a href="#research" class="cta-button">Explore Our Research</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Our Institute</h2>
+            <div class="about-content">
+                <p>The Institute for Materials Science is dedicated to advancing the fundamental understanding and applications of materials through cutting-edge research and education. Founded in [YEAR], our institute brings together experts from various disciplines to address critical challenges in materials engineering.</p>
+                <br>
+                <p>Our mission is to develop innovative materials and technologies that contribute to sustainable development, energy efficiency, and improved quality of life. Through collaborative research, state-of-the-art facilities, and comprehensive educational programs, we aim to prepare the next generation of materials scientists and engineers.</p>
+                <br>
+                <p>The institute maintains strong partnerships with industry leaders, government agencies, and academic institutions worldwide, fostering a dynamic ecosystem for knowledge exchange and technology transfer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas Section -->
+    <section class="research" id="research">
+        <div class="container">
+            <h2>Research Areas</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="/api/placeholder/400/200" alt="Advanced Materials">
+                    <div class="card-content">
+                        <h3>Advanced Materials</h3>
+                        <p>Development of novel materials with enhanced properties for structural, functional, and multifunctional applications.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/api/placeholder/400/200" alt="Nanomaterials">
+                    <div class="card-content">
+                        <h3>Nanomaterials</h3>
+                        <p>Synthesis, characterization, and application of materials at the nanoscale for electronics, energy, and healthcare.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/api/placeholder/400/200" alt="Computational Materials Science">
+                    <div class="card-content">
+                        <h3>Computational Materials Science</h3>
+                        <p>Using simulation and modeling to predict and design materials with specific properties and behaviors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2>Our Team</h2>
+            <div class="grid">
+                <div class="card team-member">
+                    <img src="/api/placeholder/150/150" alt="Professor Name">
+                    <div class="card-content">
+                        <h3>Prof. [Name]</h3>
+                        <p>Director</p>
+                        <p>Expertise in Advanced Materials Processing</p>
+                        <a href="#" class="cta-button">Profile</a>
+                    </div>
+                </div>
+                <div class="card team-member">
+                    <img src="/api/placeholder/150/150" alt="Professor Name">
+                    <div class="card-content">
+                        <h3>Dr. [Name]</h3>
+                        <p>Senior Researcher</p>
+                        <p>Expertise in Polymer Science</p>
+                        <a href="#" class="cta-button">Profile</a>
+                    </div>
+                </div>
+                <div class="card team-member">
+                    <img src="/api/placeholder/150/150" alt="Professor Name">
+                    <div class="card-content">
+                        <h3>Dr. [Name]</h3>
+                        <p>Senior Researcher</p>
+                        <p>Expertise in Computational Materials Science</p>
+                        <a href="#" class="cta-button">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Institute Information</h3>
+                    <p><strong>Address:</strong> University Campus, Building A, 123 Science Avenue, City, Country</p>
+                    <p><strong>Phone:</strong> +1 234 567 890</p>
+                    <p><strong>Email:</strong> info@materialsscience.edu</p>
+                    <p><strong>Office Hours:</strong> Monday to Friday, 9:00 AM to 5:00 PM</p>
+                    <div class="map">
+                        <img src="/api/placeholder/400/200" alt="Map">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <img src="/api/placeholder/60/60" alt="Institute Logo" style="height: 40px;">
+                <div class="logo-text">
+                    <h3>Institute for Materials Science</h3>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2025 Institute for Materials Science. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
