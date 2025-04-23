@@ -106,7 +106,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("images/csm_Campus-Sommer2_ec956744ff.jpg") center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/api/placeholder/1200/600") center/cover no-repeat;
             height: 500px;
             display: flex;
             align-items: center;
@@ -235,6 +235,55 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
+        }
+        
+        /* Team Contact Links */
+        .contact-links {
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: var(--light-gray);
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .orcid-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            color: #A6CE39;
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #f7f9fd;
+            border: 1px solid #A6CE39;
+            transition: all 0.2s ease;
+        }
+
+        .orcid-link:hover {
+            background-color: #A6CE39;
+            color: var(--white);
+        }
+
+        .orcid-icon {
+            height: 16px;
+            margin-right: 5px;
         }
         
         /* Contact Section */
@@ -396,21 +445,21 @@
             </div>
             <div class="grid">
                 <div class="card">
-                    <img src="images/experiment.png" alt="Advanced Materials"> 
+<!--                    <img src="/api/placeholder/400/200" alt="Advanced Materials"> -->
                     <div class="card-content">
                         <h3>Advanced Materials</h3>
                         <p>Strength characteristics under various load conditions; Damping behaviour of soft magnetic materials; Long-term dimensional stability of materials; Grain refinement of cast materials; Improving fatigue behaviour through mechanical surface hardening processes (e.g., shot peening, roller burnishing); Studying electrochemical corrosion behaviour</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/biofab.png" alt="Biofabrication">
+<!--                    <img src="/api/placeholder/400/200" alt="Nanomaterials"> -->
                     <div class="card-content">
                         <h3>Biofabrication</h3>
                         <p>Design, synthesis, and construction of materials inspired by biological systems</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/SIm_shear.png" alt="Computational Materials Science">
+<!--                    <img src="images/SIm_shear.png" alt="Computational Materials Science"> -->
                     <div class="card-content">
                         <h3>Computational Materials Science</h3>
                         <p>Simulation and modeling to understand, predict, and tailor materials properties and behaviour</p>
@@ -435,27 +484,32 @@
                 <div class="card team-member">
                     <img src="/api/placeholder/150/150" alt="Professor Name">
                     <div class="card-content">
-                        <h3>Prof. [Name]</h3>
-                        <p>Director</p>
-                        <p>Expertise in Advanced Materials Processing</p>
+                        <h3>Prof. Dr. Uwe Wolfram</h3>
+                        <p>Institute Director </p>
+                        <p>Professor in Digitalization in Materials Science and Engineering</p>
+                        <div class="contact-links">
+                            <a href="mailto:uwe.wolfram@tu-clausthal.de" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
+                            <a href="tel:+49123456789" class="contact-link"><i class="fas fa-phone"></i> Phone</a>
+                            <a href="https://orcid.org/0000-0003-1068-3709" class="orcid-link" target="_blank">
+                                <img src="images/orcid-logo.png" alt="ORCID" class="orcid-icon"> 0000-0001-2345-6789
+                            </a>
+                    </div>                        <a href="#" class="cta-button">Profile</a>
+                    </div>
+                </div>
+                <div class="card team-member">
+                    <img src="/api/placeholder/150/150" alt="Professor Name">
+                    <div class="card-content">
+                        <h3>Dr.-Ing. Sebastian Levin</h3>
+                        <p>Senior Engineer</p>
+                        <p>Expertise in Applied Materials Science and Engineering</p>
                         <a href="#" class="cta-button">Profile</a>
                     </div>
                 </div>
                 <div class="card team-member">
                     <img src="/api/placeholder/150/150" alt="Professor Name">
                     <div class="card-content">
-                        <h3>Dr. [Name]</h3>
-                        <p>Senior Researcher</p>
-                        <p>Expertise in Polymer Science</p>
-                        <a href="#" class="cta-button">Profile</a>
-                    </div>
-                </div>
-                <div class="card team-member">
-                    <img src="/api/placeholder/150/150" alt="Professor Name">
-                    <div class="card-content">
-                        <h3>Dr. [Name]</h3>
-                        <p>Senior Researcher</p>
-                        <p>Expertise in Computational Materials Science</p>
+                        <h3>Annelen Brinker</h3>
+                        <p>Secretariat</p>
                         <a href="#" class="cta-button">Profile</a>
                     </div>
                 </div>
