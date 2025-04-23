@@ -233,7 +233,7 @@
         .team-member img {
             width: 150px;
             height: 150px;
-            border-radius: 50%;
+            border-radius: 4%;
             object-fit: cover;
             margin-bottom: 15px;
         }
@@ -267,15 +267,15 @@
         .orcid-link {
             display: inline-flex;
             align-items: center;
-            font-size: 14px;
+            font-size: 13px; /* Slightly smaller font */
             color: #A6CE39;
             text-decoration: none;
-            padding: 4px 8px;
+            padding: 3px 7px; /* Slightly smaller padding */
             border-radius: 4px;
             background-color: #f7f9fd;
             border: 1px solid #A6CE39;
             transition: all 0.2s ease;
-        }
+        }        
 
         .orcid-link:hover {
             background-color: #A6CE39;
@@ -283,8 +283,10 @@
         }
 
         .orcid-icon {
-            height: 16px;
-            margin-right: 5px;
+            height: 12px; /* Reduced from 16px */
+            width: auto; /* Maintain aspect ratio */
+            margin-right: 4px; /* Slightly reduced margin */
+            vertical-align: middle; /* Ensures proper alignment with text */
         }
         
         /* Contact Section */
@@ -492,7 +494,7 @@
                             <a href="mailto:uwe.wolfram@tu-clausthal.de" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
                             <a href="tel:+49(0)5323722792" class="contact-link"><i class="fas fa-phone"></i> Phone</a>
                             <a href="https://orcid.org/0000-0003-1068-3709" class="orcid-link" target="_blank">
-                                <img src="images/orcid-logo.png" alt="ORCID" class="orcid-icon">
+                                <img src="images/orcid-logo.png" alt="ORCID" class="orcid-icon"> 0000-0003-1068-3709
                             </a>
                     </div>                        <a href="#" class="cta-button">Profile</a>
                     </div>
