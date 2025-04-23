@@ -238,7 +238,6 @@
             margin-bottom: 15px;
         }
 /* AAAAAAAAAAAAAAAAAAAAAAAAAAAA /*
-
         /* Contact Grid Layout */
         .contact-grid {
             margin: 12px 0;
@@ -266,10 +265,11 @@
         .contact-link {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             font-size: 14px;
             color: var(--primary-color);
             text-decoration: none;
-            padding: 5px 10px;
+            padding: 6px 0px;
             border-radius: 4px;
             background-color: var(--light-gray);
             transition: all 0.2s ease;
@@ -288,10 +288,10 @@
             font-size: 14px;
             color: #A6CE39;
             text-decoration: none;
-            padding: 5px 10px;
+            padding: 6px 0px;
             border-radius: 4px;
             background-color: #f7f9fd;
-            border: 1px solid #A6CE39;
+  /*          border: 1px solid #A6CE39; */
             transition: all 0.2s ease;
             width: 100%; /* Takes the full width */
         }
@@ -301,12 +301,21 @@
             color: var(--white);
         }
 
-        .orcid-icon {
-                    height: 16px;
-                    width: auto;
-                    margin-right: 6px;
-                    vertical-align: middle;
-                }
+        /* ORCID text-based icon */
+        .orcid-icon-text {
+            display: inline-block;
+            font-weight: bold;
+            color: white;
+            background-color: #A6CE39;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            font-size: 11px;
+            margin-right: 6px;
+        }
+
 /* AAAAAAAAAAAAAAAAAAAAAAAAAAAA /*
 
         /* Contact Section */
@@ -521,9 +530,10 @@
                                     </a>
                                 </div>
                                 <!-- ORCID link that spans the full width -->
+                                <!-- ORCID link that spans the full width -->
                                 <a href="https://orcid.org/0000-0003-1068-3709" class="orcid-link" target="_blank">
-                                    <img src="images/orcid-logo_.png" alt="ORCID" class="orcid-icon"> 0000-0003-1068-3709
-                                </a>
+                                    <span class="orcid-icon-text">iD</span> 0000-0003-1068-3709
+                                </a>                                
                             </div>
                             <a href="#" class="cta-button">Profile</a>
                     </div>
